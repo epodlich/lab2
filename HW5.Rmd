@@ -1,0 +1,78 @@
+---
+title: "HW5"
+author: "Emma"
+date: "2023-03-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Team Names: Emma Podlich & Ryan Corydon
+Link to Github Repository: https://github.com/epodlich/lab2
+
+
+##Import Data
+
+```{r}
+choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
+head(choco)
+```
+
+## Question Set 1
+
+What is the overall number of chocolate bars rated?
+
+```{r}
+
+```
+
+How does the number of ratings depend on the year? Draw a bar chart of the number of reports.
+
+```{r}
+
+```
+
+## Question Set 2
+
+For each of the questions below provide at least one graphic as a basis for your answer.
+
+How are ratings distributed? Draw a histogram of ratings and describe it. Don’t forget to mention outliers, if there are any.
+
+```{r}
+
+```
+
+Do ratings depend on the cocoa percentage of a chocolate bar?
+
+```{r}
+
+```
+
+How do ratings compare across different company locations? Focus on the three locations with the most ratings:
+
+```{r}
+
+```
+
+## Our Own Questions
+
+Question 1: Emma
+
+```{r}
+
+```
+
+Conclusions:
+
+Question 2: Ryan
+
+```{r}
+
+```
+
+Conclusions:
+
+## Workflow
+
