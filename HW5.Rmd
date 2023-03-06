@@ -16,6 +16,7 @@ Link to Github Repository: https://github.com/epodlich/lab2
 ##Import Data
 
 ```{r}
+library(ggplot2)
 choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
 head(choco)
 ```
@@ -28,26 +29,29 @@ What is the overall number of chocolate bars rated?
 
 ```
 
-How does the number of ratings depend on the year? Draw a bar chart of the number of reports.
+How does the number of ratings depend on the year? Draw a bar chart of the number of reports. As years increased the number of ratings generally increased as well. From 2005 until 2017 we can see that 2015 was the best year for movies and 2005 was the worst. Shockingly, after 2015 there is a steady decrease in the amount of movies rated.
 
 ```{r}
-
+ggplot(choco, aes(x = Review.Date)) + 
+  geom_bar(aes(weight= Rating)) 
 ```
 
 ## Question Set 2
 
 For each of the questions below provide at least one graphic as a basis for your answer.
 
-How are ratings distributed? Draw a histogram of ratings and describe it. Don’t forget to mention outliers, if there are any.
+How are ratings distributed? Draw a histogram of ratings and describe it. Don’t forget to mention outliers, if there are any. Looking at the histogram there seems to be two outliers, a rating with a score of 1 and a rating with a score of 5. The histogram shows the most common ratings are between 2.5 and 4 with the highest being around 3.5.
 
 ```{r}
-
+ggplot(choco, aes(x = Rating)) + 
+  geom_histogram(binwidth=0.25) +
+  ggtitle("binwidth = 0.25")
 ```
 
-Do ratings depend on the cocoa percentage of a chocolate bar?
+Do ratings depend on the cocoa percentage of a chocolate bar? Looking at the scatterplot, we can conclude that ratings do not depend on cocoa percentage. As rating goes increase, cocoa percentage does not either increase or decrease making it an uneven distribution. There is an outlier with a rating of five and the percentage of cocoa is on 70.
 
 ```{r}
-
+ggplot(data = choco, aes(x = Rating, y = Cocoa.Pct)) + geom_point()
 ```
 
 How do ratings compare across different company locations? Focus on the three locations with the most ratings:
@@ -68,11 +72,15 @@ Conclusions:
 
 Question 2: Ryan
 
-```{r}
+The question I want to investigate is the distribution of cocoa percentage within the total number of chocolate bars.
 
+```{r}
+ggplot(choco, aes(x = Cocoa.Pct)) + 
+  geom_histogram(binwidth=5) +
+  ggtitle("binwidth = 5")
 ```
 
-Conclusions:
+Conclusions: Through this histogram it can be concluded that most chocolate bars have a cocoa percentage of 70. I can assume the higher the percentage the more richer and sweeter the chocolate bar is. Meaning a bar with 100% cocoa probably does not taste very good. There is an outlier with a few bars that have 100% cocoa in them, as well there is a chocolate bar with only 42% cocoa.
 
 ## Workflow
 
